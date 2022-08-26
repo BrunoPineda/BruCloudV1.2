@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <main class="container">
+        <div style="display:flex;">
+            <h2>Gestor de archivos BruCloud©</h2>
+            <a style=" text-decoration: none;     margin-left: 20px;" href="http://localhost:5502/"><img src="./img/back-arrow.png" alt=""></a>
+        </div>
+        <div><strong>Usted esta en:</strong></div>
+        <div id="united">Disco virtual BruCloud:/</div>
+        <br>
+
+        <div style="display:flex;">
+            <button style="margin: 5px;" id="createFile">Crear carpeta</button>
+        </div>
+        <br>
+        <table>
+            <tbody id="table">
+                <tr>
+                    <th>First Name</th>
+
+                </tr>
+            </tbody>
+        </table>
+        <h1>Subir archivos</h1>
+        <div class="formconruta"></div>
+        <h2>Eliminar</h2>
+        <form>
+            <input type="text" id="name1">
+            <input type="submit" id="btn" value="Eliminar">
+        </form>
+    </main>
+    <script type="module" src="./scriptCreateFolder.js"></script>
+    <script type="module" src="./scritpFolder.js"></script>
+</body>
+
+</html>

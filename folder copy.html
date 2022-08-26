@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <main class="container">
+        <div style="display:flex;">
+            <h2>Gestor de archivos</h2>
+
+            <a style=" text-decoration: none;     margin-left: 20px;" href="http://localhost:5502/index%20copy.html"><img src="./img/back-arrow.png" alt=""></a>
+        </div>
+
+
+        <div style="display:flex;">
+            <button style="margin: 5px;" id="createFile">Crear carpeta</button>
+            <button style="margin: 5px;" id="updateFile">Cambiar nombre a la carpeta</button>
+            <button style="margin: 5px;" id="deleteFile">Eliminar carpeta</button>
+        </div>
+        <br>
+        <table>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+        <form action='http://localhost:3001/upload' target='_blank' method="POST" enctype="multipart/form-data">
+            <input type="file" name="myFile" id="file1">
+            <input type="submit" value="Subir">
+        </form>
+        <h2>Eliminar</h2>
+        <form>
+            <input type="text" id="name1">
+            <input type="submit" id="btn" value="Eliminar">
+        </form>
+    </main>
+    <script>
+        async function reload() {
+            await location.reload();
+        }
+    </script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./scritpFolder copy.js"></script>
+</body>
+
+</html>
