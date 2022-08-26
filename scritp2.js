@@ -1,4 +1,4 @@
-const url = 'http://localhost:3001/';
+const url = 'https://api-rest-brucorp1.herokuapp.com/';
 const cargarDatos = async(url) => {
     const res = await fetch(url);
     const datos = await res.json();
@@ -10,12 +10,12 @@ const cargarDatos = async(url) => {
             const regex = /[.][a-zA-Z]+/;
             if (!regex.test(name)) {
                 $("table").append("<tr >" +
-                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='http://localhost:5502/folder.html?name=" + name + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
+                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='https://brunopineda.github.io/BruCloudV1.2/folder.html?name=" + name + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
                     "</tr>");
 
             } else {
                 $("table").append("<tr >" +
-                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='http://localhost:3001/" + name + "' target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + " </a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
+                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='https://api-rest-brucorp1.herokuapp.com/" + name + "' target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + " </a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
                     "</tr>");
             }
             datosTabla();
@@ -96,7 +96,7 @@ function borrarElemento(name) {
     event.preventDefault()
     const name1 = name;
     if (name1 == "") { return false; }
-    var url = "http://localhost:3001/upload/" + name1;
+    var url = "https://api-rest-brucorp1.herokuapp.com/upload/" + name1;
     console.log(url)
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url);
@@ -118,7 +118,7 @@ function borrarFolder(name) {
     event.preventDefault()
     const name1 = name;
     if (name1 == "") { return false; }
-    var url = "http://localhost:3001/upload/folder/" + name1;
+    var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + name1;
     console.log(url)
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url);
@@ -146,7 +146,7 @@ function editarFolder(newName) {
         confirmButtonText: 'Crear',
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
-            var url = "http://localhost:3001/upload/folder/" + newName + "&" + name;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + newName + "&" + name;
 
             var xhr = new XMLHttpRequest();
             xhr.open("PUT", url);
@@ -192,7 +192,7 @@ function editarElemento(newName, extension) {
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
 
-            var url = "http://localhost:3001/upload/folder/" + newName + "&" + name + "." + extension;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + newName + "&" + name + "." + extension;
             console.log(url)
             var xhr = new XMLHttpRequest();
             xhr.open("PUT", url);

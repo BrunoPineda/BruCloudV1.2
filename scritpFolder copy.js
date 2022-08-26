@@ -34,7 +34,7 @@ arreglo(nameFilter)
 
 
 
-const url = 'http://localhost:3001/upload/folder/';
+const url = 'https://api-rest-brucorp1.herokuapp.com/upload/folder/';
 const cargarDatos = async(url) => {
     const res = await fetch(url);
     const datos = await res.json();
@@ -47,12 +47,12 @@ const cargarDatos = async(url) => {
             const regex = /[.][a-zA-Z]+/;
             if (!regex.test(name)) {
                 $("table").append("<tr >" +
-                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='http://localhost:5502/folder.html?name=" + arreglo(name) + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
+                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='https://brunopineda.github.io/BruCloudV1.2/folder.html?name=" + arreglo(name) + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
                     "</tr>");
                 cargarDatos(url + "upload/folder/" + name);
             } else {
                 $("table").append("<tr >" +
-                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='http://localhost:3001/" + name + "' target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + " </a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
+                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='https://api-rest-brucorp1.herokuapp.com/" + name + "' target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + " </a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
                     "</tr>");
             }
             datosTabla();

@@ -43,13 +43,13 @@ arreglo(nameFilter)
 document.getElementById('united').innerHTML = "Disco virtual BruCloud:/" + arregloFiles(nameFilter);
 
 
-const url = 'http://localhost:3001/upload/folder/';
+const url = 'https://api-rest-brucorp1.herokuapp.com/upload/folder/';
 const cargarDatos = async(url) => {
     const res = await fetch(url);
     const datos = await res.json();
 
     $(document).ready(function() {
-        $(".formconruta").append("<form action='http://localhost:3001/upload/files/multiples/" + name.name + "' target='_blank' method='POST' enctype='multipart/form-data'>" +
+        $(".formconruta").append("<form action='https://api-rest-brucorp1.herokuapp.com/upload/files/multiples/" + name.name + "' target='_blank' method='POST' enctype='multipart/form-data'>" +
             "<input type='file' name='myFile' id='myFile' multiple>" +
             "<input type='submit' value='SubirCUYES'>" +
             "</form>");
@@ -58,11 +58,11 @@ const cargarDatos = async(url) => {
             const regex = /[.][a-zA-Z]+/;
             if (!regex.test(name)) {
                 $("table").append("<tr >" +
-                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='http://localhost:5502/folder.html?name=" + nameFilter + "!" + name + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
+                    "<td style='display:flex;' >  <img style='width: 30px;' src='./img/folder.png' alt='folder'> -> <a href='https://brunopineda.github.io/BruCloudV1.2/folder.html?name=" + nameFilter + "!" + name + "' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" +
                     "</tr>");
             } else {
                 $("table").append("<tr >" +
-                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='http://localhost:3001/" + arregloFiles(nameFilter) + "/" + name + "'target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
+                    "<td>  <img style='width: 30px;  float: left;' src='./img/file.png' alt='folder'> <a style='float: left;' <a href='https://api-rest-brucorp1.herokuapp.com/" + arregloFiles(nameFilter) + "/" + name + "'target='_blank' id='BruCorp'>" + name + "<id='AdminFiltro'/a>" + "<div style='float: right;'>" + datos.size[i] + "</div>" +
                     "</tr>");
             }
             datosTabla();
@@ -143,7 +143,7 @@ function borrarElemento(name) {
     const name1 = name;
     if (name1 == "") { return false; }
     http: //localhost:3001/upload/a!a.txt
-        var url = "http://localhost:3001/upload/" + nameFilter + "!" + name1;
+        var url = "https://api-rest-brucorp1.herokuapp.com/upload/" + nameFilter + "!" + name1;
     console.log(url)
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url);
@@ -167,7 +167,7 @@ function borrarFolder(name) {
     event.preventDefault()
     const name1 = name;
     if (name1 == "") { return false; }
-    var url = "http://localhost:3001/upload/folder/" + nameFilter + "!" + name1;
+    var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + nameFilter + "!" + name1;
     console.log(url)
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url);
@@ -186,7 +186,7 @@ function borrarFolder(name) {
 }
 
 function editarFolder(newName) {
-    const a = 'http://localhost:3001/upload/folder/AdminBruno1&AdminBruno2'
+    const a = 'https://api-rest-brucorp1.herokuapp.com/upload/folder/AdminBruno1&AdminBruno2'
     Swal.fire({
         title: '¿Con que nombre vas a editar tu carpeta?',
         input: 'text',
@@ -197,7 +197,7 @@ function editarFolder(newName) {
         confirmButtonText: 'Crear',
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
-            var url = "http://localhost:3001/upload/folder/" + newName + "&" + name;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + newName + "&" + name;
 
             var xhr = new XMLHttpRequest();
             xhr.open("PUT", url);
@@ -243,7 +243,7 @@ function editarElemento(newName, extension) {
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
             console.log(nameFilter)
-            var url = "http://localhost:3001/upload/folder/" + nameFilter + "!" + newName + "&" + name + "." + extension;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + nameFilter + "!" + newName + "&" + name + "." + extension;
             console.log(url)
             var xhr = new XMLHttpRequest();
             xhr.open("PUT", url);

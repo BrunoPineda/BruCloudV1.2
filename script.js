@@ -25,7 +25,7 @@ $buttonCreateFile.addEventListener('click', () => {
         showLoaderOnConfirm: true,
         preConfirm: (name) => {
 
-            var url = "http://localhost:3001/upload/folder/" + name;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + name;
 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", url);

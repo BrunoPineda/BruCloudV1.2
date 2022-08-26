@@ -63,9 +63,9 @@ $buttonCreateFolder.addEventListener('click', () => {
         showLoaderOnConfirm: true,
         preConfirm: (nameDelete) => {
             var location = document.URL;
-            var example = "http://localhost:3001/upload/folder/a!proMaster!crack"
+            var example = "https://api-rest-brucorp1.herokuapp.com/upload/folder/a!proMaster!crack"
 
-            var url = "http://localhost:3001/upload/folder/" + nameFilter + "!" + nameDelete;
+            var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + nameFilter + "!" + nameDelete;
             console.log(url)
 
             var xhr = new XMLHttpRequest();
@@ -109,8 +109,8 @@ $btn.addEventListener('click', () => {
     event.preventDefault()
     const name1 = document.getElementById('name1').value;
     if (name1 == "") { return false; }
-    //var url = "http://localhost:3001/upload/folder/JUAN!A";
-    var url = "http://localhost:3001/upload/folder/" + nameFilter + "!" + name1;
+    //var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/JUAN!A";
+    var url = "https://api-rest-brucorp1.herokuapp.com/upload/folder/" + nameFilter + "!" + name1;
     console.log(url)
     var xhr = new XMLHttpRequest();
     xhr.open("DELETE", url);
